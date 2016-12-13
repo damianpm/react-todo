@@ -12,10 +12,7 @@ store.subscribe(()=>{
   console.log('New state', store.getState());
 });
 
-store.dispatch(actions.addTodo('Pasear a vaco'));
-store.dispatch(actions.setSearchText('vaco'));
-store.dispatch(actions.toggleShowCompleted());
-store.dispatch(actions.toggleShowCompleted());
+
 
 // Load foundation
 $(document).foundation();
