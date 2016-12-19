@@ -9,7 +9,7 @@ module.exports = {
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
-  externals:{
+  externals: {
     jquery: 'jQuery'
   },
   plugins: [
@@ -35,7 +35,7 @@ module.exports = {
       './app/api'
     ],
     alias: {
-      app:'app',
+      app: 'app',
       applicationStyles: 'app/styles/app.scss',
       actions: 'app/actions/actions.jsx',
       reducers: 'app/reducers/reducers.jsx',
@@ -44,19 +44,21 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
-    loaders: [{
-      loader: 'babel-loader',
-      query: {
-        presets: ['react', 'es2015', 'stage-0']
-      },
-      test: /\.jsx?$/,
-      exclude: /(node_modules|bower_components)/
-    }]
+    loaders: [
+      {
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015', 'stage-0']
+        },
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/
+      }
+    ]
   },
-  sassLoader:{
+  sassLoader: {
     includePaths: [
       path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
-  devtool: process.env.NODE_ENV === 'production' ? undefined : 'eval-source-map'
-}
+  devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-eval-source-map'
+};
